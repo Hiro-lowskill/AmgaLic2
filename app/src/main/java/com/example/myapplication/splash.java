@@ -6,20 +6,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-public class MainActivity extends AppCompatActivity {
+public class splash extends AppCompatActivity {
 
-    private final int SPLASH_DISPLAY_LENGHT=500;
+    private final int SPLASH_DISPLAY_LENGHT=2500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_splash);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent main = new Intent(MainActivity.this,Login.class);
-                MainActivity.this.startActivity(main);
-                MainActivity.this.finish();
+                Intent main = new Intent(splash.this,screen.class);
+                splash.this.startActivity(main);
+                splash.this.finish();
             }
         },SPLASH_DISPLAY_LENGHT);
     }
