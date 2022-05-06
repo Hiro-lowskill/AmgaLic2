@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "241841732619",
+    "firebase_url": "https://amgalic-53a9e-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "amgalic-53a9e",
+    "storage_bucket": "amgalic-53a9e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241841732619:android:e2e0f3dab617e19b8e1b0e",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "241841732619-gmo77m5geh59c3a1qmckhnbm62ikcj58.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv7r7q7qcZj_DRtFyiYaYJDirIC0aCNOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "241841732619-gmo77m5geh59c3a1qmckhnbm62ikcj58.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
