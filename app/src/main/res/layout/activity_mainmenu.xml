@@ -132,6 +132,7 @@
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/btn_photo"
+        android:onClick="btn2"
         app:layout_constraintBottom_toTopOf="@+id/imageView11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageButton11"

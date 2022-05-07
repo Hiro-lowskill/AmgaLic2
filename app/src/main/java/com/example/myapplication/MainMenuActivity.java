@@ -25,4 +25,10 @@ public class MainMenuActivity extends AppCompatActivity {
     public void onSwitcherClick(View view){
         mImageSwitcher.showNext();
     }
+
+    public void btn2(View view) {
+        Intent i = new Intent(this, UploadPhotoActivity.class);
+        startActivity(i);
+        finish();
+    }
 }
