@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -15,14 +16,14 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class autoriz extends AppCompatActivity {
+public class AuthorizeActivity extends AppCompatActivity {
     private EditText edEmail, edSecName;
     private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_autoriz);
+        setContentView(R.layout.activity_authorize);
         init();
     }
 
@@ -40,7 +41,7 @@ public class autoriz extends AppCompatActivity {
 
     private void init(){
         edEmail = findViewById(R.id.edEmail);
-        edSecName = findViewById(R.id.edSecName);
+        edSecName = findViewById(R.id.edPassword);
         mAuth = FirebaseAuth.getInstance();
     }
     public void OnClickSignUp(View view){
@@ -61,5 +62,13 @@ public class autoriz extends AppCompatActivity {
         else{
             Toast.makeText(getApplicationContext(),"Please write", Toast.LENGTH_SHORT).show();
         }
+    }
+    public void btn(View view){
+        Intent i = new Intent(this,AuthenticationActivity.class);
+        startActivity(i);
+    }
+    public void btn2(View view){
+        Intent i = new Intent(this,MainMenuActivity.class);
+        startActivity(i);
     }
 }

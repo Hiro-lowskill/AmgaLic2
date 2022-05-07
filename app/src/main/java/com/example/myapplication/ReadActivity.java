@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class read extends AppCompatActivity {
+public class ReadActivity extends AppCompatActivity {
     private ListView listView;
     private ArrayAdapter<String> adapter;
     private List<String> listData;
@@ -69,13 +69,13 @@ public class read extends AppCompatActivity {
     }
 
     public void btn(View view){
-        Intent i = new Intent(this,autoriz.class);
+        Intent i = new Intent(this, AuthorizeActivity.class);
         startActivity(i);
         finish();
     }
 
     public void btn2(View view){
-        Intent i = new Intent(this,authen.class);
+        Intent i = new Intent(this, AuthenticationActivity.class);
         startActivity(i);
         finish();
     }

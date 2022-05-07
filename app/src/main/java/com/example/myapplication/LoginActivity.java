@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private EditText edName, edSecName, edEmail;
     private DatabaseReference mDataBase;
@@ -27,7 +27,7 @@ public class Login extends AppCompatActivity {
     public void init()
     {
         edName = findViewById(R.id.edName);
-        edSecName = findViewById(R.id.edSecName);
+        edSecName = findViewById(R.id.edPassword);
         edEmail = findViewById(R.id.edEmail);
         mDataBase = FirebaseDatabase.getInstance().getReference(USER_KEY);
 
@@ -53,7 +53,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void onClickRead(View view){
-        Intent i = new Intent(this,read.class);
+        Intent i = new Intent(this, ReadActivity.class);
         startActivity(i);
 
     }
