@@ -11,7 +11,8 @@
         android:theme="@style/Theme.MyApplication">
         <activity
             android:name=".ShowActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.Design.NoActionBar"/>
         <activity
             android:name=".UploadPhotoActivity"
             android:exported="true"

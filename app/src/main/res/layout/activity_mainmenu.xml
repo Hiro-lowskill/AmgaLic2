@@ -107,6 +107,18 @@
         android:id="@+id/imageButton16"
         android:layout_width="110dp"
         android:layout_height="80dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/btn_nov"
+        android:onClick="btn4"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton12"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="110dp"
+        android:layout_height="80dp"
         android:layout_marginStart="36dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/btn_project"
@@ -120,8 +132,22 @@
         android:layout_height="80dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/btn_doc"
+        android:onClick="btn3"
         app:layout_constraintBottom_toTopOf="@+id/imageView11"
         app:layout_constraintEnd_toStartOf="@+id/imageButton12"
+        app:layout_constraintStart_toEndOf="@+id/imageButton10"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton17"
+        android:layout_width="110dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/btn_nap"
+        android:onClick="btn"
+        app:layout_constraintBottom_toTopOf="@+id/imageView11"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton12"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageButton10"
         tools:ignore="SpeakableTextPresentCheck" />
 

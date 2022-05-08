@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageSwitcher;
 
@@ -28,6 +29,16 @@ public class MainMenuActivity extends AppCompatActivity {
 
     public void btn2(View view) {
         Intent i = new Intent(this, UploadPhotoActivity.class);
+        startActivity(i);
+        finish();
+    }
+    public void btn3(View view) {
+        Intent i = new Intent(this, LoginActivity.class);
+        startActivity(i);
+        finish();
+    }
+    public void btn4(View view) {
+        Intent i = new Intent(this, ReadActivity.class);
         startActivity(i);
         finish();
     }
