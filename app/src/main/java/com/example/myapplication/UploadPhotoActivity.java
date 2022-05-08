@@ -10,14 +10,18 @@ import android.graphics.drawable.BitmapDrawable;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -31,6 +35,9 @@ public class UploadPhotoActivity extends AppCompatActivity {
     private ImageView ShowImage;
     private StorageReference mStorageRef;
     private Uri uploadUri;
+    private EditText edName, edSecName, edEmail;
+    private DatabaseReference mDataBase;
+    private String USER_KEY = "User";
 
 
     @Override
@@ -43,6 +50,10 @@ public class UploadPhotoActivity extends AppCompatActivity {
     public void init() {
         ShowImage = findViewById(R.id.ShowImage);
         mStorageRef = FirebaseStorage.getInstance().getReference("Image_User");
+        edName = findViewById(R.id.edName);
+        edSecName = findViewById(R.id.edPassword);
+        edEmail = findViewById(R.id.edEmail);
+        mDataBase = FirebaseDatabase.getInstance().getReference(USER_KEY);
 
     }
 
@@ -58,7 +69,7 @@ public class UploadPhotoActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 Log.d("MyLog", "Image URI" + data.getData());
                 ShowImage.setImageURI(data.getData());
-                uploadImage();
+
 
             }
 
@@ -85,6 +96,7 @@ public class UploadPhotoActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<Uri> task) {
                 uploadUri = task.getResult();
                 Toast.makeText(UploadPhotoActivity.this,"Картинка успешно загружена",Toast.LENGTH_SHORT).show();
+                SaveUser();
 
             }
         });
@@ -98,5 +110,33 @@ public class UploadPhotoActivity extends AppCompatActivity {
         Choose.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Choose,1);
 
+    }
+    public void onClickSave(View view){
+        uploadImage();
+
+
+    }
+
+    public void onClickRead(View view){
+        Intent i = new Intent(this, ReadActivity.class);
+        startActivity(i);
+
+    }
+    private void SaveUser(){
+        String id = mDataBase.push().getKey();
+        String name = edName.getText().toString();
+        String sec_name = edSecName.getText().toString();
+        String email = edEmail.getText().toString();
+        User newUser = new User(id,name,sec_name,email,uploadUri.toString());
+        if(!TextUtils.isEmpty(name) && !TextUtils.isEmpty(sec_name) && !TextUtils.isEmpty(email)) {
+
+            if(id != null)mDataBase.child(id).setValue(newUser);
+
+            Toast.makeText(this,"Сохранено",Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Toast.makeText(this,"Пустое поле",Toast.LENGTH_SHORT).show();
+        }
     }
 }

@@ -10,8 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".UploadPhotoActivity"
+            android:name=".ShowActivity"
             android:exported="true" />
+        <activity
+            android:name=".UploadPhotoActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".SplashActivity"
             android:exported="true"

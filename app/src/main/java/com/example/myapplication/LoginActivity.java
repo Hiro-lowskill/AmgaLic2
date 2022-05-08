@@ -34,24 +34,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    public void onClickSave(View view){
-        String id = mDataBase.getKey();
-        String name = edName.getText().toString();
-        String sec_name = edSecName.getText().toString();
-        String email = edEmail.getText().toString();
-        User newUser = new User(id,name,sec_name,email);
-        if(!TextUtils.isEmpty(name) && !TextUtils.isEmpty(sec_name) && !TextUtils.isEmpty(email)) {
-
-            mDataBase.push().setValue(newUser);
-        }
-        else
-        {
-            Toast.makeText(this,"Пустое поле",Toast.LENGTH_SHORT).show();
-        }
-
-
-    }
-
     public void onClickRead(View view){
         Intent i = new Intent(this, ReadActivity.class);
         startActivity(i);
